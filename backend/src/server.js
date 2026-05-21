@@ -24,6 +24,10 @@ if (process.env.NODE_ENV !== 'production') {
 
 }
 
+app.get('/health', (req, res) => {
+  res.status(200).send('OK');
+});
+
 app.use(express.json());
 app.use(rateLimiter);
 
